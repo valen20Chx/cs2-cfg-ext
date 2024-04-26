@@ -1,0 +1,71 @@
+// radar
+cl_hud_radar_scale "0.9"
+cl_radar_scale "0.4"
+cl_radar_always_centered "0"
+
+// viewmodel
+viewmodel_presetpos 0
+viewmodel_offset_x 1
+viewmodel_offset_y 1
+viewmodel_offset_z -1
+viewmodel_fov 66
+cl_usenewbob 1
+
+// Gamma max
+r_fullscreengamma 2.6
+
+// mics
+bind "l" "playerradio deathcry Moan"
+
+// crosshairs
+alias crosshair_yellow43 "exec crosshair_yellow43"
+alias crosshair_green43 "exec crosshair_green43"
+alias bhop_crosshair "exec crosshair_bhop"
+
+alias default_crosshair "crosshair_green43"
+
+default_crosshair
+
+// Buy shortcuts
+bind kp_minus sellall
+
+// jump throw
+bind j "+jump; +attack; -attack; -jump"
+// jump throw
+bind n "noclip"
+// player_ping
+bind mouse5 "player_ping"
+
+// jump on mouse wheel toggle (bhop)
+bind r bhop
+alias bhop "bind r nobhop; bind mwheelup +jump; bind mwheeldown +jump; bhop_crosshair"
+alias nobhop "bind r bhop; bind mwheelup invprev; bind mwheeldown invnext; default_crosshair"
+
+// timescale
+bind l time_ffw
+alias time_ffw "bind l time_resume; host_timescale 1000"
+alias time_resume "bind l time_ffw; host_timescale 1"
+
+// aliases
+alias sellall "sellback 0;sellback 1;sellback 2;sellback 3;sellback 4;sellback 5;sellback 6;sellback 8;sellback 9;sellback 10;sellback 11;sellback 12;sellback 13;sellback 14;sellback 15;sellback 16;sellback 17;sellback 18;sellback 26;sellback 26;sellback 27;sellback 28;sellback 29;sellback 30;sellback 32;sellback 33;sellback 34;sellback 35;play ui\panorama\itemtile_click_02.vsnd_c"
+alias d "disconnect"
+alias q "quit"
+alias r "retry"
+alias rs "mp_restartgame 1"
+alias surf "sv_airaccelerate 800; sv_accelerate 10"
+
+// misc
+bind p sv_rethrow_last_grenade
+bind n noclip
+
+// network
+cl_updaterate 128
+alias low "mm_dedicated_search_maxping  20; cl_interp_ratio 1; cl_interp 0.015625"
+alias high "mm_dedicated_search_maxping  200; cl_interp_ratio 2; cl_interp 0.03125"
+
+low
+
+// cl_showfps 1
+
+// End
+host_writeconfig
